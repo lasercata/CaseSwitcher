@@ -1,2 +1,2 @@
 # CaseSwitcher
-Simple tool to switch case
+Simple tool to switch text case.
