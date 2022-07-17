@@ -14,6 +14,18 @@ alf_upper = alf_lower.upper()
 
 version = '1.0'
 
+upper_to_lower_dct = {
+    '2': 'é',
+    '7': 'è',
+    '9': 'ç',
+    '0': 'à',
+    '%': 'ù',
+    '?': ',',
+    ';': '.',
+    '/': ':',
+    '§': '!'
+}
+
 
 ##-Imports
 #------gui
@@ -40,7 +52,7 @@ def to_upper(s):
     return s.upper()
 
 
-def switch(s):
+def switch(s, to_lower=True):
     '''Switch case of s.'''
 
     ret = ''
@@ -54,6 +66,11 @@ def switch(s):
 
         else:
             ret += k
+
+
+    if to_lower:
+        for k in upper_to_lower_dct:
+            ret = ret.replace(k, upper_to_lower_dct[k])
 
     return ret
 
